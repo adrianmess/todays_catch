@@ -2,6 +2,11 @@ import React from 'react';
 import { formatPrice } from '../helpers';
 
 class Fish extends React.Component{
+
+  /*
+  could use inline function instead
+  <button disabled={!isAvailable} onClick={() => this.props.addToOrder(this.props.index)} >
+   */
   handleClick = () => {
     this.props.addToOrder(this.props.index);
   }
