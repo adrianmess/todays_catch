@@ -31,7 +31,7 @@ render(){
       <div className="menu">
         <Header tagline="adrian is cool"/>
         <ul className="fishes">
-          {Object.keys(this.state.fishes).map(key => <Fish key={key} />)}
+          {Object.keys(this.state.fishes).map(key => <Fish key={key} details={this.state.fishes[key]}/>)}
         </ul>
 
       </div>
