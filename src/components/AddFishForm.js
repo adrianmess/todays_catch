@@ -11,12 +11,15 @@ class AddFishForm extends React.Component {
   createFish = (e) =>{
     //1. stop form from submitting
     e.preventDefault();
-    console.log("Make a fish")
-    console.log(this.nameRef.value.value)
+    const fish = {
+      nameRef : this.nameRef.value.value,
+    priceRef : parseFloat(this.priceRef.value.value), //
+    statusRef : this.statusRef.value.value,
+    descRef : this.descRef.value.value,
+    imageRef : this.imageRef.value.value,
+    }
+    console.log(fish);
   }
-
-
-
 
   render () {
     return (
