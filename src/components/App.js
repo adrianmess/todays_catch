@@ -18,9 +18,12 @@ class App extends React.Component {
     // const { params } = this.props.match;
     // this.ref = base.syncState(`${params.storeId}/fishes`, {
 
-    //first reinstant our local storage
+    //first reinstate our local storage
     const localStorageRef = localStorage.getItem(this.props.match.params.storeId);
-    console.log(localStorageRef);
+    if(localStorageRef){
+      this.setState({ order: JSON.parse(localStorageRef) })
+    }
+    //syncing with firebase
     this.ref = base.syncState(`${this.props.match.params.storeId}/fishes`, {
       context: this,
       state: 'fishes'
