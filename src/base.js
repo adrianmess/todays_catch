@@ -8,3 +8,13 @@ const firebaseApp = firebase.initializeApp({
     databaseURL: "https://todays-catch-market.firebaseio.com"
   }
 })
+
+//create firebase bindings
+const base = Rebase.createClass(firebaseApp.database());
+
+//this is a named export
+export { firebaseApp };
+
+//this is the default export
+
+export default base;
