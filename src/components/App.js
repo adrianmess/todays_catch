@@ -18,6 +18,9 @@ class App extends React.Component {
     // const { params } = this.props.match;
     // this.ref = base.syncState(`${params.storeId}/fishes`, {
 
+    //first reinstant our local storage
+    const localStorageRef = localStorage.getItem(this.props.match.params.storeId);
+    console.log(localStorageRef);
     this.ref = base.syncState(`${this.props.match.params.storeId}/fishes`, {
       context: this,
       state: 'fishes'
@@ -26,7 +29,7 @@ class App extends React.Component {
 
   componentDidUpdate(){
     console.log(this.state.order);
-    localStorage.setItem(this.props.match.params.storeId, this.state.order);
+    localStorage.setItem(this.props.match.params.storeId, JSON.stringify(this.state.order));
 
   };
 
