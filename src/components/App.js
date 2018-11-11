@@ -25,7 +25,9 @@ class App extends React.Component {
   }
 
   componentDidUpdate(){
-    console.log("it updated");
+    console.log(this.state.order);
+    localStorage.setItem(this.props.match.params.storeId, this.state.order);
+
   };
 
   componentWillUnmount(){
