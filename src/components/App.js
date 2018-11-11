@@ -24,6 +24,10 @@ class App extends React.Component {
     });
   }
 
+  componentDidUpdate(){
+    console.log("it updated");
+  };
+
   componentWillUnmount(){
     base.removeBinding(this.ref);
   };
