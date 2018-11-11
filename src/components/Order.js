@@ -17,7 +17,10 @@ class Order extends React.Component{
       <div className="order-wrap">
         <h2>Order!!</h2>
         <div>
-          {orderIds}
+          <ul>
+            {orderIds.map(key => <li key={key}>{key}</li>)}
+            </ul>
+
           <div className="total">
             Total:
             <strong>{formatPrice(total)}</strong>
