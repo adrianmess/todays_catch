@@ -1,5 +1,6 @@
 import React from 'react';
 import AddFishForm from './AddFishForm';
+import EditFishForm from './EditFishForm';
 
 class Inventory extends React.Component {
 
@@ -7,6 +8,8 @@ class Inventory extends React.Component {
     return (
       <div className="inventory">
         <h2>Inventory</h2>
+        {/* //for each fish render out an edit fish tag, convert to array first before mapping */}
+        {Object.keys(this.props.fishes).map(fish => <EditFishForm/>)}
         <AddFishForm addFish={this.props.addFish}/>
         <button onClick={this.props.loadSampleFishes}>Load Sample Fishes</button>
       </div>
