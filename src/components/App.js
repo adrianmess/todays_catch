@@ -50,12 +50,24 @@ class App extends React.Component {
   }
 
   updateFish = (key, updatedFish) => {
-    //1. take a copy of the current state
+    // 1. take a copy of the current state
     const fishes = {...this.state.fishes};
-    //2. update that state
+    // 2. update that state
     fishes[key] = updatedFish;
-    //3. set that to state
+    // 3. set that to state
     this.setState({ fishes : fishes})
+  }
+
+  deleteFish = (key) => {
+    // 1. take a copy of state
+    const fishes = {...this.state.fishes};
+    // 2. update the state (remove item)
+    // note if we were updating an array we could use this.state.fishes.filter()
+    // and filter out the fishes we want but because it's an object we make a copy of it.
+      fishes[key] = null; //for it to remove from state and firebase we must use null
+    // 3. update state
+      this.setState({ fishes });
+      // test in console - $r.deleteFish('fish4')
   }
 
   loadSampleFishes = () => {
