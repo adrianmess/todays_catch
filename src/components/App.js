@@ -88,6 +88,7 @@ class App extends React.Component {
           </div>
           <Inventory
             addFish={this.addFish}
+            updateFish={this.updateFish}
             loadSampleFishes={this.loadSampleFishes}
             fishes={this.state.fishes}
             />
