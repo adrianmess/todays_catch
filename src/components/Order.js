@@ -12,13 +12,13 @@ class Order extends React.Component{
 
     if(!isAvailable){
       return (
-      <CSSTransition classNames="order" key={key} timeout={{ enter:250, exit:250}}>
+      <CSSTransition classNames="order" key={key} timeout={{ enter:5000, exit:5000}}>
       <li key={key}> Sorry {fish ? fish.name : 'fish' } is no longer available </li>
       </CSSTransition>
       );
     }
     return (
- <CSSTransition classNames="order" key={key} timeout={{ enter:250, exit:250}}>
+ <CSSTransition classNames="order" key={key} timeout={{ enter:5000, exit:5000}}>
  <li key={key}>
       {count} lbs {fish.name}
       {formatPrice(count * fish.price)}
