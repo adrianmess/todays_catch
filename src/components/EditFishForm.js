@@ -1,6 +1,19 @@
-import React from 'react';
+import React from "react";
+import PropTypes from "prop-types";
 
-class EditFishForm extends React.Component{
+class EditFishForm extends React.Component {
+  static propTypes = {
+    fish: PropTypes.shape({
+      image: PropTypes.string,
+      name: PropTypes.string,
+      desc: PropTypes.string,
+      statis: PropTypes.string,
+      price: PropTypes.number
+    }),
+    index: PropTypes.string,
+    updateFish: PropTypes.func
+
+  };
 
   handleChange = event => {
     // console.log(event.currentTarget.value)
@@ -13,30 +26,46 @@ class EditFishForm extends React.Component{
       [event.currentTarget.name]: event.currentTarget.value
     };
     // console.log(updatedFish);
-    this.props.updateFish(this.props.index,updatedFish)
+    this.props.updateFish(this.props.index, updatedFish);
   };
 
   render() {
-    return(
+    return (
       <div className="fish-edit">
-      <input
-      type="text"
-      name="name"
-      onChange={this.handleChange}
-      value={this.props.fish.name}
-      />
-      <input type="text" name="price" onChange={this.handleChange} value={this.props.fish.price}/>
-      <select type="text" name="status">
+        <input
+          type="text"
+          name="name"
+          onChange={this.handleChange}
+          value={this.props.fish.name}
+        />
+        <input
+          type="text"
+          name="price"
+          onChange={this.handleChange}
+          value={this.props.fish.price}
+        />
+        <select type="text" name="status">
           <option value="available">Fresh!</option>
           <option value="unavailable">Sold Out!</option>
-      </select>
-      <textarea name="desc" onChange={this.handleChange} value={this.props.fish.desc}/>
-      <input type="text" name="image" onChange={this.handleChange} value={this.props.fish.image}/>
-      {/* use inline function to run deleteFish function */}
-      <button onClick={() => this.props.deleteFish(this.props.index)}>Remove Fish</button>
+        </select>
+        <textarea
+          name="desc"
+          onChange={this.handleChange}
+          value={this.props.fish.desc}
+        />
+        <input
+          type="text"
+          name="image"
+          onChange={this.handleChange}
+          value={this.props.fish.image}
+        />
+        {/* use inline function to run deleteFish function */}
+        <button onClick={() => this.props.deleteFish(this.props.index)}>
+          Remove Fish
+        </button>
       </div>
-    )
+    );
   }
-};
+}
 
 export default EditFishForm;
