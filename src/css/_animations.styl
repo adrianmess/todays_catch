@@ -5,3 +5,23 @@
   appear Must set transitionAppear={true} on animation component
 */
 
+
+.order-enter
+  background red
+  transform: translateX(-120%)
+  transition 1s
+  max-height: 0
+  padding 0 !important
+  &.order-enter-active
+    background orange
+    max-height: 60px
+    transform: translateX(0)
+    padding 2rem 0 !important
+
+.order-exit
+  background thistle
+  transition 1s
+  transform: translateX(0)
+  &.order-exit-active
+    background purple
+    transform: translateX(120%)
