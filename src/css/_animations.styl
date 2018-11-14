@@ -9,7 +9,7 @@
 .order-enter
   background red
   transform: translateX(-120%)
-  transition 1s
+  transition .5s
   max-height: 0
   padding 0 !important
   &.order-enter-active
@@ -20,8 +20,27 @@
 
 .order-exit
   background thistle
-  transition 1s
+  transition .5s
   transform: translateX(0)
   &.order-exit-active
-    background purple
-    transform: translateX(120%)
+    background white
+    transform translateX(120%)
+
+.count-enter
+  background red
+  transition .5
+  transform translateY(100%)
+  &.count-enter-active
+    background yellow
+    transform translateY(0)
+
+.count-exit
+  background black
+  transform translateY(0)
+  transition .5
+  position absolute
+  left 0
+  bottom 0
+  $.count-exit-active
+    background green
+    transform translateY(-100%)
