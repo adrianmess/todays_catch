@@ -84,6 +84,14 @@ class App extends React.Component {
     this.setState({ order });
   }
 
+  removeFromOrder = key => {
+  const order = { ...this.state.order };
+  // 2. remove from order - since we're not deleting from firebase we don't use null,
+  // instead we can use 'delete'
+  delete order[key];
+  this.setState({ order })
+  }
+
   render(){
     return (
       <div className="catch-of-the-day">
@@ -106,7 +114,9 @@ class App extends React.Component {
             loadSampleFishes={this.loadSampleFishes}
             fishes={this.state.fishes}
             />
-          <Order fishes={this.state.fishes} order={this.state.order} />
+          <Order fishes={this.state.fishes} order={this.state.order}
+          removeFromOrder={this.removeFromOrder}
+          />
         </div>
       )
     }
