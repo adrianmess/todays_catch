@@ -13,10 +13,14 @@ class Order extends React.Component{
       return (<li key={key}> Sorry {fish ? fish.name : 'fish' } is no longer available </li>);
     }
     return (
-    <li key={key}>
+      <div key={key}>
+    <li >
       {count} lbs {fish.name}
       {formatPrice(count * fish.price)}
     </li>
+    <button onClick={() => (this.props.removeFromOrder(key))}>Remove From Order</button>
+      </div>
+
   );
 };
   render() {
