@@ -4,6 +4,7 @@
     // won't let people delete an existing room
     ".write": "!data.exists()",
     ".read": true,
+    //$room - $ is a wildcard that will match anything that is a 2nd level deep
     "$room": {
       // only the store owner can edit the data
       ".write":
