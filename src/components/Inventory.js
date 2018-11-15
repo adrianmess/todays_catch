@@ -19,6 +19,18 @@ class Inventory extends React.Component {
     owner: null
   };
 
+  // on refresh, recheck if we're logged in
+  // everytime we load the page firebase will check if were
+  // logged in and authenticated. If true it will pass a user
+  // that we can then pass to authHandler. authHandler will perform checks on the user
+  componentDidMount () {
+    firebase.auth().onAuthStateChanged(user => {
+      if(user) {
+        this.authHandler({user});
+      }
+    })
+  }
+
   authHandler = async authData => {
     // 1. look up the current store in the firebase database
     // fetch will return promise, if we want the STORE instead of PROMISE put AWAIT in front.
