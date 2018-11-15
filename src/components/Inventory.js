@@ -14,6 +14,11 @@ class Inventory extends React.Component {
     loadSampleFishes: PropTypes.func
   };
 
+  state = {
+    uid: null,
+    owner: null
+  }
+
   authHandler = async authData => {
     // 1. look up the current store in the firebase database
     // fetch will return promise, if we want the STORE instead of PROMISE put AWAIT in front.
