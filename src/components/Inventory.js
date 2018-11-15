@@ -4,7 +4,7 @@ import firebase from "firebase";
 import AddFishForm from "./AddFishForm";
 import EditFishForm from "./EditFishForm";
 import Login from "./Login";
-import { firebaseApp } from "../base";
+import base, { firebaseApp } from "../base";
 
 class Inventory extends React.Component {
   static propTypes = {
@@ -16,10 +16,26 @@ class Inventory extends React.Component {
 
   authHandler = async authData => {
     // 1. look up the current store in the firebase database
+    // fetch will return promise, if we want the STORE instead of PROMISE put AWAIT in front.
+    const store = await base.fetch(this.props.storeId, {context : this})
+    console.log(store);
     // 2. claim it if there is no owner (if were the first person to login then we're likely the owner
     // and can claim the store as our own). Save this to firebase database
+     if(!store.owner){
+       // save it as our own (push/push data) ->
+       await base.post(`${this.props.storeId}/owner`, {
+         //this comes from the user payload we get from github or w/e
+         // can use email address instead of UID
+         data: authData.user.uid
+       });
+     }
     // 3. Set the state of the inventory component to reflect the current user
-
+     this.setState({
+       //determine who is the current logged in user
+       uid: authData.user.uid,
+       //who is the owner of the store by .owner or .uid
+       owner: store.owner || authData.user.uid
+     })
     console.log(authData);
     //{user: Lk, credential: Hf, additionalUserInfo: xf, operationType: "signIn"}
   };
