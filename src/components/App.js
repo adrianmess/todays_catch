@@ -118,6 +118,8 @@ class App extends React.Component {
             deleteFish={this.deleteFish}
             loadSampleFishes={this.loadSampleFishes}
             fishes={this.state.fishes}
+            //this comes from react router (APP > Props:Match>params > storeid
+            storeId={this.props.match.params.storeId}
             />
           <Order fishes={this.state.fishes} order={this.state.order}
           removeFromOrder={this.removeFromOrder}
