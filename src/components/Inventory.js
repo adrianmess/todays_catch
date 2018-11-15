@@ -15,10 +15,10 @@ class Inventory extends React.Component {
   };
 
   authHandler = async authData => {
-// 1. look up the current store in the firebase database
-// 2. claim it if there is no owner (if were the first person to login then we're likely the owner
-// and can claim the store as our own). Save this to firebase database
-// 3. Set the state of the inventory component to reflect the current user
+    // 1. look up the current store in the firebase database
+    // 2. claim it if there is no owner (if were the first person to login then we're likely the owner
+    // and can claim the store as our own). Save this to firebase database
+    // 3. Set the state of the inventory component to reflect the current user
 
     console.log(authData);
     //{user: Lk, credential: Hf, additionalUserInfo: xf, operationType: "signIn"}
