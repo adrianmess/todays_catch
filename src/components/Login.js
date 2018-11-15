@@ -1,11 +1,10 @@
 import React from 'react';
 
-class Login extends React.Component {
-    render() {
-        return (
-
-        )
+const Login = () => {
+    <nav className="login">
+        <h2>Inventory Login</h2>
+    </nav>
     }
-}
+
 
 export default Login;
