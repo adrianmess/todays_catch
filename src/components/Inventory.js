@@ -54,6 +54,10 @@ class Inventory extends React.Component {
       .then(this.authHandler);
   };
 
+  logout = () => {
+    console.log('Logging Out!');
+  }
+
   render() {
     const logout = <button onClick={this.logout}>Log Out</button>;
     // 1. check if they are logged in
