@@ -11,11 +11,11 @@ const Login = props => (
         </button>
         <button className='facebook'
         onClick={() => props.authenticate('Facebook')}>
-            Log In With Github
+            Log In With Facebook
         </button>
         <button className='twitter'
         onClick={() => props.authenticate('Twitter')}>
-            Log In With Github
+            Log In With Twitter
         </button>
     </nav>
 );
