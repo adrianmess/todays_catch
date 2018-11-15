@@ -1,8 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
+import firebase from "firebase";
 import AddFishForm from "./AddFishForm";
 import EditFishForm from "./EditFishForm";
 import Login from "./Login";
+import { firebaseApp } from "../base";
 
 class Inventory extends React.Component {
   static propTypes = {
@@ -12,12 +14,27 @@ class Inventory extends React.Component {
     loadSampleFishes: PropTypes.func
   };
 
-authenticate = () => {
-  alert('YA');
-};
+  authHandler = async authData => {
+// 1. look up the current store in the firebase database
+// 2. claim it if there is no owner (if were the first person to login then we're likely the owner
+// and can claim the store as our own). Save this to firebase database
+// 3. Set the state of the inventory component to reflect the current user
+
+    console.log(authData);
+    //{user: Lk, credential: Hf, additionalUserInfo: xf, operationType: "signIn"}
+  };
+  authenticate = provider => {
+    const authProvider = new firebase.auth[`${provider}AuthProvider`]();
+    //connect to Auth portion of firebase and pass it the authprovider. THEN pass to authHandler function
+    // so when someone does sign-in, then what are we going to do after they sign-in.
+    firebaseApp
+      .auth()
+      .signInWithPopup(authProvider)
+      .then(this.authHandler);
+  };
 
   render() {
-    return <Login authenticate={this.authenticate}/>;
+    return <Login authenticate={this.authenticate} />;
     return (
       <div className="inventory">
         <h2>Inventory</h2>
