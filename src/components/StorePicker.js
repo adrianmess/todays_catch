@@ -17,12 +17,13 @@ class StorePicker extends React.Component{
     this.props.history.push(`/store/${storeName}`)
   }
 
+
   render(){
     return(
       <React.Fragment>
         <form className="store-selector" onSubmit={this.goToStore}>
-          <h2>Test</h2>
-
+          <h2>Please Enter Store Name</h2>
+          <p className="store-selector-p">Store names are randomly generated - Refresh for different name or enter name manually.</p>
           <input type="text"
             ref = {this.myInput}
             required
