@@ -652,3 +652,6 @@ input[type=submit].twitter:after {
 .store-selector-p {
   font-size: 1.1rem;
 }
+.logout {
+  background-color: rgba(245,166,35,0.478) !important;
+}
