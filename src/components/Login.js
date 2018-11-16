@@ -9,10 +9,10 @@ const Login = props => (
         onClick={() => props.authenticate('Github')}>
         Log In With Github
         </button>
-        <button className='facebook'
+        {/* <button className='facebook'
         onClick={() => props.authenticate('Facebook')}>
             Log In With Facebook
-        </button>
+        </button> */}
         <button className='twitter'
         onClick={() => props.authenticate('Twitter')}>
             Log In With Twitter
