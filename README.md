@@ -11,8 +11,32 @@ I created this real-time app by following a react course create by Wes Bos. The 
 
 #### Prerequisites
 
--   [Twitter public developer key]
--   [Google developer public key]
+-   [Twitter public developer Api ID and App Secret]
+-   [Github public developer Client ID and Client Secret]
+##### Add API keys to firebase
+1. Go to console.firebase.google.com
+2. Select project
+3. Authentication > Sign-in method
+-   ~~For Facebook enter **App ID** and **App Secret**~~
+-   For Twitter enter **Api Key** and **App Secret**
+    - Add authorization callback URL to your GitHub app configuration
+-   For Github enter **Cliend ID** and **Client Secret**
+    - Add authorization callback URL to your GitHub app configuration
+
+4.    then add firebase config to src/config.js
+-   Follow **Add Firebase to your app** > https://firebase.google.com/docs/web/setup?authuser=0
+-   [Firebase config]
+
+*config.js*
+
+    var config = {
+        apiKey: "###########-###########-#############",
+        authDomain: "example-name-8012.firebaseapp.com",
+        databaseURL: "https://example-name-8012.firebaseio.com",
+    }
+
+    export default config;
+
 
 #### Clone
  * Clone this repo to your local machine using https://github.com/adrianmess/todays_catch
