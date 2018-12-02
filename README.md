@@ -40,6 +40,7 @@ I created this real-time app by following a react course create by Wes Bos. The 
     * JSX
     * State management
     * Reusable components
+    * Component Validation with PropTypes
 
 * Firebase Authentication
     * Twitter | Github | ~~Facebook~~
