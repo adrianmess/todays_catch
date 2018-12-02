@@ -18,10 +18,6 @@
 .env.test.local
 .env.production.local
 .vscode
-
-.firebase/hosting.*
-
-./firebase/*
 .firebase/*
 
 npm-debug.log*
