@@ -19,8 +19,10 @@
 .env.production.local
 .vscode
 
-./firebase
-.firebase
+.firebase/hosting.*
+
+./firebase/*
+.firebase/*
 
 npm-debug.log*
 yarn-debug.log*
