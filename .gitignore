@@ -9,6 +9,8 @@
 # production
 /build
 
+/src/config.js
+
 # misc
 .DS_Store
 .env.local
@@ -17,6 +19,7 @@
 .env.production.local
 .vscode
 
+./firebase
 .firebase
 
 npm-debug.log*
