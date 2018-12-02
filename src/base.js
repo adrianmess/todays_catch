@@ -5,7 +5,7 @@ import config from './config';
 console.log(config)
 const firebaseApp = firebase.initializeApp(config)
 
-//##### Removed API Key for github #############
+//##### Removed API Key so not visibit in github repo #############
 // const firebaseApp = firebase.initializeApp({
 //   apiKey: "################################",
 //   authDomain: "todays-catch-market.firebaseapp.com",
