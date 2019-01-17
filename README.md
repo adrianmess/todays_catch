@@ -3,7 +3,7 @@
 
 #### By [Adrian Messado](https://github.com/adrianmess)
 ## Description
-I created this real-time app by following a react course create by Wes Bos. The apps purpose is to be used as a sea food market where the price and quantity of available fish are variable and can change at moment's notice. The app contains a menu, an order form, and an inventory management area where authorized users can immediately update product details.
+The apps purpose is to be used as a sea food market where the price and quantity of available fish are variable and can change at moment's notice. The app contains a menu, an order form, and an inventory management area where authorized users can immediately update product details.
 
 
 
